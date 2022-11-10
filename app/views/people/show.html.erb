@@ -13,11 +13,11 @@
         <%= button_to "Delete", @person, method: :delete, :class => 'btn btn-sm btn-danger', :style=> "margin-left: 5px"%>
       </div>
     </div>
-    <div class="col number" style="">
-      <h2 class="text-secondary"><u>Number</u></h2>
+    <div class="col p-4 m-2 number" style="">
+      <h2 >Number</h2>
       
       <% @person.numbers.each do |number| %>
-        <p>
+        <p class="border-top border-secondary">
         Phone Number:
           <strong class="text-dark"><%= number.phone_number %></strong>
           
@@ -27,23 +27,23 @@
           <strong class="text-dark"><%= number.comment %></strong>
           
         </p>
+            
+              <%= link_to "Edit", edit_person_number_path(@person, number), :class => "btn my-2 btn-secondary btn-sm", id: "update-number"%>
       
           <%= link_to "Delete", [number.person, number], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-          }, :class => "btn btn-sm btn-danger" %>
-      
-        <%= link_to "Edit", edit_person_number_path(@person, number), :class => "btn mt-2 btn-secondary btn-sm", id: "update-number"%>
+          }, :class => "btn btn-sm my-2 btn-danger" %>
       <% end %>
           <div>
-<%= link_to "Create", new_person_number_path(@person), :class => "btn btn-sm mt-5 btn-primary", id: "create-number"%>
-      </div>
+            <%= link_to "Create", new_person_number_path(@person), :class => "btn btn-sm mt-5 btn-primary", id: "create-number"%>
+          </div>
       
     </div>
-    <div class="col" style="">
-      <h2 class="text-secondary"><u>Email</u></h2>
+    <div class="col p-4 m-2" style="">
+      <h2 class="text-secondary">Email</h2>
       <% @person.emails.each do |email| %>
-        <p>
+        <p class="border-top border-secondary">
         Email Address:
           <strong class="text-dark"><%= email.email %></strong>
           
@@ -53,12 +53,12 @@
           <strong class="text-dark"><%= email.comment %></strong>
           
         </p>
+            
+                  <%= link_to "Edit", edit_person_email_path(@person, email), :class => "btn btn-sm my-2 btn-secondary", id: "update-email"%>
           <%= link_to "Delete", [email.person, email], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
                 }, :class => "btn btn-sm btn-danger" %>
-  
-        <%= link_to "Edit", edit_person_email_path(@person, email), :class => "btn btn-sm mt-2 btn-secondary", id: "update-email"%>
       <% end %>
       <div>
   <%= link_to "Create", new_person_email_path(@person), :class => "btn btn-primary btn-sm mt-5", id: "create-email"%>
@@ -67,10 +67,10 @@
   
     </div>
     
-    <div class="col">
-      <h2 class="text-secondary"><u>Address</u></h2>
+    <div class="col p-4 m-2">
+      <h2 class="text-secondary">Address</h2>
       <% @person.addresses.each do |address| %>
-        <p style="margin-top:20px">
+        <p class="border-top border-secondary" style="">
         Street:
           <strong class="text-dark"><%= address.street %></strong>
           
@@ -100,7 +100,7 @@
                   turbo_confirm: "Are you sure?"
                 }, :class => "btn btn-sm btn-danger" %>
         
-        <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn mt-2 btn-secondary btn-sm", id: "update-address" %>
+        <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn m-2 btn-secondary btn-sm", id: "update-address" %>
       <% end %>
       <div>
         <%= link_to "Create", new_person_address_path(@person), :class => "btn mt-5 btn-primary btn-sm", id: "create-address"%>
