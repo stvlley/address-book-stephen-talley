@@ -1,6 +1,7 @@
-<h1>Editing Email</h1>
-
-<%= render 'form', email: @email %>
-
-<%= link_to 'Show', @email %> |
-<%= link_to 'Back', emails_path %>
+<div class="container text-center mt-5">
+  <h1> <u> Edit </u> </h1>
+  <%= render "form" %>
+  <div>
+    <%= link_to "Back to people", people_path %>
+  </div>
+</div>

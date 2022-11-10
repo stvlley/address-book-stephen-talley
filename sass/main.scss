@@ -1,0 +1,91 @@
+
+    /* default button */
+    .btn-default {
+        background-color: #FFF;
+        color: #333;
+        border-color: #adadad;
+        border-radius: 25px;
+    }
+    .btn-default:hover,
+    .btn-default:focus,
+    .btn-default:active    {
+        background-color: #ebebeb;
+        color: #333;
+        border-color: #adadad;
+    }
+    
+    /* primary button */
+    .btn-primary {
+        background-color: #FFF;
+        color: #285e8e;
+        border-color: #3276b1;
+        border-radius: 25px;
+    }
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active    {
+        background-color: #3276b1;
+        color: #FFF;
+        border-color: #285e8e;
+    }
+
+    /* success button */
+    .btn-success {
+        background-color: #FFF;
+        color: #398439;
+        border-color: #47a447;
+        border-radius: 25px;
+    }
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active    {
+        background-color: #47a447;
+        color: #FFF;
+        border-color: #398439;
+    }
+
+    /* info button */
+    .btn-info {
+        background-color: #FFF;
+        color: #269abc;
+        border-color: #39b3d7;
+        border-radius: 25px;
+    }
+    .btn-info:hover,
+    .btn-info:focus,
+    .btn-info:active    {
+        background-color: #39b3d7;
+        color: #FFF;
+        border-color: #269abc;
+    }
+    
+    /* warning button */
+    .btn-warning {
+        background-color: #FFF;
+        color: #d58512;
+        border-color: #ed9c28;
+        border-radius: 25px;
+    }
+    .btn-warning:hover,
+    .btn-warning:focus,
+    .btn-warning:active    {
+        background-color: #ed9c28;
+        color: #FFF;
+        border-color: #d58512;
+    }
+
+    /* danger button */
+    .btn-danger {
+        background-color: #FFF;
+        color: #ac2925;
+        border-color: #d2322d;
+        border-radius: 25px;
+    }
+    .btn-danger:hover,
+    .btn-danger:focus,
+    .btn-danger:active {
+        background-color: #d2322d;
+        color: #FFF;
+        border-color: #ac2925;
+    }
+@import '../node_modules/bootstrap/scss/bootstrap';

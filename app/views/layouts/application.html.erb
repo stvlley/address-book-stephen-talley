@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TalleysNewAddyBook</title>
+    <title>Addy App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/css/main.min.css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="font-monospace" style=" background-color: rgb(255,193,7)">
+
+  <nav class=" navbar navbar-light navbar-expand-lg bg-light">
+  <div class=" container-fluid">
+    <a class=" navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <% if current_user %>
+      <!-- current_user will return true if a user is logged in -->
+       <%# <%= "Logged in as #{current_user.email}"  %> 
+      <%= link_to 'Log Out', logout_path, data: { turbo_method: :delete }, class:"nav-link"%>
+    </li>
+    <% else %>
+      <!-- not logged in -->
+      <li> 
+    <%= link_to 'Log In', login_path, class:"nav-link"%> 
+      </li>
+      <li>
+    <%= link_to 'Sign Up', signup_path, class:"nav-link" %>
+    <% end %>
+      </li>
+         <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <%= yield %>
   </body>
-</html>

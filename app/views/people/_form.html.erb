@@ -1,7 +1,8 @@
-<%= form_with model: person do |form| %>
-  <div>
+<div class=" bg-light m-3 p-3">
+  <%= form_with model: person do |form| %>
+  <div >
     <%= form.label :salutation %><br>
-    <%= form.select :salutation, ["Mr", "Mrs", "Ms", "Jr"] %>
+    <%= form.select :salutation, ["Mr.", "Mrs.", "Ms."] %>
     <% person.errors.full_messages_for(:salutation).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -49,6 +50,7 @@
     <% end %>
   </div>
   <div>
-    <%= form.submit class: 'btn btn-success btn-sm' %>
+    <%= form.submit class: 'btn btn-primary btn-sm' %>
   </div>
 <% end %>
+</div>

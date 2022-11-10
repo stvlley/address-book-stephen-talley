@@ -1,91 +1,109 @@
 <p style="color: green"><%= notice %></p>
-<div class="container text-center" style="margin-top: 65px">
+<div class="container  text-secondary text-center" style="margin-top: 65px">
   <div class="row">
     <div class="col" style="border-right: solid">
-      <h2><u><%= @person.salutation %>. <%= @person.first_name %> <%= @person.middle_name %> <%= @person.last_name %></u>  </h2>
+      <h2 class="text-secondary"><u><%= @person.salutation %><%= @person.first_name %> <%= @person.middle_name %> <%= @person.last_name %></u>  </h2>
      
-        <p><strong>SSN:</strong> <%= @person.ssn %></p>
-        <p><strong>Birthday:</strong> <%= @person.birth_date %></p>
-        <p><strong>Comments:</strong><%= @person.comment %></p>
+        <p >SSN:<strong class="text-dark"> <%= @person.ssn %></strong></p>
+        <p >Birthday:<strong class="text-dark"> <%= @person.birth_date %></strong></p>
+        <p >Comments:<strong class="text-dark"><%= @person.comment %></strong></p>
       
       <div style="display: flex; justify-content: center;">
-        <%= link_to "Edit", edit_person_path(@person), :class => 'btn btn-warning', id: "update-person"%>
-        <%= button_to "Delete", @person, method: :delete, :class => 'btn btn-danger', :style=> "margin-left: 5px"%>
+        <%= link_to "Edit", edit_person_path(@person), :class => 'btn btn-secondary btn-sm', id: "update-person"%>
+        <%= button_to "Delete", @person, method: :delete, :class => 'btn btn-sm btn-danger', :style=> "margin-left: 5px"%>
       </div>
     </div>
-    <div class="col number" style="border-right: solid">
-      <h2><u>Number</u></h2>
+    <div class="col number" style="">
+      <h2 class="text-secondary"><u>Number</u></h2>
+      
       <% @person.numbers.each do |number| %>
         <p>
-          <strong>Phone Numbers:</strong>
-          <%= number.phone_number %>
+        Phone Number:
+          <strong class="text-dark"><%= number.phone_number %></strong>
+          
         </p>
         <p>
-          <strong>Comments:</strong>
-          <%= number.comment %>
+        Comments:
+          <strong class="text-dark"><%= number.comment %></strong>
+          
         </p>
-        <p>
-          <%= link_to "Delete Number", [number.person, number], data: {
+      
+          <%= link_to "Delete", [number.person, number], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-          }, :class => "btn btn-danger" %>
-        </p>
-        <%= link_to "Edit", edit_person_number_path(@person, number), :class => "btn btn-warning", id: "update-number"%>
+          }, :class => "btn btn-sm btn-danger" %>
+      
+        <%= link_to "Edit", edit_person_number_path(@person, number), :class => "btn mt-2 btn-secondary btn-sm", id: "update-number"%>
       <% end %>
-      <%= link_to "Create", new_person_number_path(@person), :class => "btn btn-success", id: "create-number"%>
+          <div>
+<%= link_to "Create", new_person_number_path(@person), :class => "btn btn-sm mt-5 btn-primary", id: "create-number"%>
+      </div>
+      
     </div>
-    <div class="col" style="border-right: solid">
-      <h2><u>Email</u></h2>
+    <div class="col" style="">
+      <h2 class="text-secondary"><u>Email</u></h2>
       <% @person.emails.each do |email| %>
         <p>
-          <strong>Emails:</strong>
-          <%= email.email %>
+        Email Address:
+          <strong class="text-dark"><%= email.email %></strong>
+          
         </p>
         <p>
-          <strong>Comments:</strong>
-          <%= email.comment %>
+        Comments:
+          <strong class="text-dark"><%= email.comment %></strong>
+          
         </p>
-        <p>
-          <%= link_to "Delete Email", [email.person, email], data: {
+          <%= link_to "Delete", [email.person, email], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-                }, :class => "btn btn-danger" %>
-        </p>
-        <%= link_to "Edit", edit_person_email_path(@person, email), :class => "btn btn-warning", id: "update-email"%>
+                }, :class => "btn btn-sm btn-danger" %>
+  
+        <%= link_to "Edit", edit_person_email_path(@person, email), :class => "btn btn-sm mt-2 btn-secondary", id: "update-email"%>
       <% end %>
-      <%= link_to "Create", new_person_email_path(@person), :class => "btn btn-success", id: "create-email"%>
+      <div>
+  <%= link_to "Create", new_person_email_path(@person), :class => "btn btn-primary btn-sm mt-5", id: "create-email"%>
+      </div>
+
+  
     </div>
+    
     <div class="col">
-      <h2><u>Address</u></h2>
+      <h2 class="text-secondary"><u>Address</u></h2>
       <% @person.addresses.each do |address| %>
         <p style="margin-top:20px">
-          <strong>Street:</strong>
-          <%= address.street %>
+        Street:
+          <strong class="text-dark"><%= address.street %></strong>
+          
         </p>
         <p>
-          <strong>Town:</strong>
-          <%= address.town %>
+        City:
+          <strong class="text-dark"><%= address.town %></strong>
+          
         </p>
         <p>
-          <strong>Zipcode:</strong>
-          <%= address.zipcode %>
+        Zipcade:
+          <strong class="text-dark"><%= address.zip_code %></strong>
+          
         </p>
         <p>
-          <strong>State:</strong>
-          <%= address.state %>
+        State:
+          <strong class="text-dark"><%= address.state %></strong>
+          
         </p>
         <p>
-          <strong>Country:</strong>
-          <%= address.country %>
+        Country:
+          <strong class="text-dark"><%= address.country %></strong>
+          
         </p>
-        <p>
-          <%= link_to "Delete Address", [address.person, address], data: {
+          <%= link_to "Delete", [address.person, address], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
-                }, :class => "btn btn-danger" %>
-        </p>
-        <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn btn-warning", id: "update-address" %>
+                }, :class => "btn btn-sm btn-danger" %>
+        
+        <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn mt-2 btn-secondary btn-sm", id: "update-address" %>
       <% end %>
-      <%= link_to "Create", new_person_address_path(@person), :class => "btn btn-success", id: "create-address"%>
+      <div>
+        <%= link_to "Create", new_person_address_path(@person), :class => "btn mt-5 btn-primary btn-sm", id: "create-address"%>
+      </div>
     </div>
   </div>
