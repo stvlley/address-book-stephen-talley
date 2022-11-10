@@ -1,0 +1,38 @@
+<div class="container text-center mt-5">
+<h1><u>Sign Up</u></h1>
+  <%= form_with model: @user do |form| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :username %><br>
+        <%= form.text_field :username %>
+        <% @user.errors.full_messages_for(:username).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :email %><br>
+        <%= form.text_field :email %><br>
+        <% @user.errors.full_messages_for(:email).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password %><br>
+        <%= form.text_field :password %><br>
+        <% @user.errors.full_messages_for(:password).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password_confirmation %><br>
+        <%= form.text_field :password_confirmation %><br>
+        <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <div><%= message %></div>
+        <% end %>
+      </div>
+      <%= form.submit %>
+      </div>
+   </div>
+  <% end %>
+</div>

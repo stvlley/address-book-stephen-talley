@@ -1,0 +1,54 @@
+<%= form_with model: person do |form| %>
+  <div>
+    <%= form.label :salutation %><br>
+    <%= form.select :salutation, ["Mr", "Mrs", "Ms", "Jr"] %>
+    <% person.errors.full_messages_for(:salutation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %><br>
+    <% person.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :middle_name %><br>
+    <%= form.text_field :middle_name %><br>
+    <% person.errors.full_messages_for(:middle_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %><br>
+    <% person.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :ssn %><br>
+    <%= form.text_field :ssn %><br>
+    <% person.errors.full_messages_for(:ssn).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :birth_date %><br>
+    <%= form.date_field :birth_date %><br>
+    <% person.errors.full_messages_for(:birth_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :comment %><br>
+    <%= form.text_area :comment %><br>
+    <% person.errors.full_messages_for(:comment).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit class: 'btn btn-success btn-sm' %>
+  </div>
+<% end %>
