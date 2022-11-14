@@ -12,7 +12,6 @@ class AddressesController < ApplicationController
             format.json { render json: @address.errors, status: :unprocessable_entity }
           end
         end
-        # redirect_to person_path(@person)
     end
 
     def index
@@ -26,7 +25,6 @@ class AddressesController < ApplicationController
           format.html { redirect_to people_url, notice: "Person was successfully destroyed." }
           format.json { head :no_content }
         end
-        # redirect_to person_path(@person), status: :see_other
     end 
 
     def edit

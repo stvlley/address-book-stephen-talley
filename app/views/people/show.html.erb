@@ -95,12 +95,12 @@
           <strong class="text-dark"><%= address.country %></strong>
           
         </p>
+            <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn my-2 btn-secondary btn-sm", id: "update-address" %>
           <%= link_to "Delete", [address.person, address], data: {
                   turbo_method: :delete,
                   turbo_confirm: "Are you sure?"
                 }, :class => "btn btn-sm btn-danger" %>
         
-        <%= link_to "Edit", edit_person_address_path(@person, address), :class => "btn m-2 btn-secondary btn-sm", id: "update-address" %>
       <% end %>
       <div>
         <%= link_to "Create", new_person_address_path(@person), :class => "btn mt-5 btn-primary btn-sm", id: "create-address"%>

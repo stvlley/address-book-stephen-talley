@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "You have successfully signed up!"
     else
-      render json: @user.errors, status: :unprocessable_entity 
+      render :new, status: :unprocessable_entity
     end
 
   end

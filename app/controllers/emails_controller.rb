@@ -12,7 +12,7 @@ class EmailsController < ApplicationController
           format.json { render json: @email.errors, status: :unprocessable_entity }
         end
       end
-      # redirect_to person_path(@person)
+      
   end
 
   def index 
@@ -26,7 +26,6 @@ class EmailsController < ApplicationController
         format.html { redirect_to people_url, notice: "Email was successfully destroyed." }
         format.json { head :no_content }
       end
-      # redirect_to person_path(@person), status: :see_other
   end
 
   def edit

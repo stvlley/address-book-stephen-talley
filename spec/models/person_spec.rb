@@ -1,5 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Person, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  current_user = User.first_or_create!(name: "Roger", email: "roger@test.com", password: "secret", password_confirmation: "secret")
+   
+  it "is not valid without a first name" do 
+    person = Person.new(first_name: nil)
+    expect(person).not_to be_valid
+  end
+
+  it "is not valid without a last name" do 
+    person = Person.new(last_name: nil) 
+    expect(person).not_to be_valid
+  end 
+  
+  describe "associtations" do 
+    it { should belong_to(:user) }
+    it { should have_many(:emails) }
+    it { should have_many(:numbers) }
+    it { should have_many(:addresses) }
+  end
+  
 end
